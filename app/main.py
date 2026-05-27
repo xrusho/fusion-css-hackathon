@@ -25,6 +25,11 @@ class SlackPayload(BaseModel):
     message_text: str
 
 
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Slack relay is running"}
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
